@@ -96,8 +96,6 @@ define(`app_domain', `
 typeattribute $1 appdomain;
 # Label ashmem objects with our own unique type.
 tmpfs_domain($1)
-# Map with PROT_EXEC.
-allow $1 $1_tmpfs:file execute;
 ')
 
 #####################################

@@ -8,6 +8,9 @@
 ###
 
 # WebView and other application-specific JIT compilers
+#
+# Fine-grained control is applied by leveraging Android's permission system for
+# PaX MPROTECT exceptions.
 allow appdomain self:process execmem;
 
 allow appdomain ashmem_device:chr_file execute;
