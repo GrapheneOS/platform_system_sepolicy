@@ -99,6 +99,7 @@ allow shell proc_interrupts:file r_file_perms;
 allow shell proc_meminfo:file r_file_perms;
 allow shell proc_stat:file r_file_perms;
 allow shell proc_timer:file r_file_perms;
+allow shell proc_vmstat:file r_file_perms;
 allow shell proc_zoneinfo:file r_file_perms;
 r_dir_file(shell, cgroup)
 allow shell domain:dir { search open read getattr };
