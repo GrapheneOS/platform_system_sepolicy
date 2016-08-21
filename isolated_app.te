@@ -12,6 +12,9 @@
 type isolated_app, domain, domain_deprecated;
 app_domain(isolated_app)
 
+# For art.
+allow untrusted_app dalvikcache_data_file:file execute;
+
 # Access already open app data files received over Binder or local socket IPC.
 allow isolated_app app_data_file:file { read write getattr lock };
 

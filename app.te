@@ -207,7 +207,6 @@ allow appdomain usb_device:chr_file { read write getattr ioctl };
 allow appdomain usbaccessory_device:chr_file { read write getattr };
 
 # For art.
-allow appdomain dalvikcache_data_file:file execute;
 allow appdomain dalvikcache_data_file:lnk_file r_file_perms;
 
 # Allow any app to read shared RELRO files.
