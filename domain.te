@@ -155,6 +155,7 @@ neverallow { domain -init -recovery } unlabeled:dir_file_class_set create;
 neverallow {
   domain
   -debuggerd
+  -init
   -vold
   -dumpstate
   -system_server

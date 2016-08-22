@@ -76,6 +76,9 @@ allow init self:capability sys_time;
 
 allow init self:capability { sys_rawio mknod };
 
+# Set /proc/sys/kernel/yama/ptrace_scope
+allow init self:capability { sys_ptrace };
+
 # Mounting filesystems from block devices.
 allow init dev_type:blk_file r_file_perms;
 
