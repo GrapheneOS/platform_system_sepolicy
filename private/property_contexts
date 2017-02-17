@@ -49,6 +49,7 @@ persist.simpleperf.profile_app_uid              u:object_r:shell_prop:s0
 persist.simpleperf.profile_app_expiration_time  u:object_r:shell_prop:s0
 security.lower_kptr_restrict u:object_r:lower_kptr_restrict_prop:s0
 service.adb.root        u:object_r:shell_prop:s0
+sys.update.             u:object_r:shell_prop:s0
 service.adb.tls.port    u:object_r:adbd_prop:s0
 persist.adb.wifi.       u:object_r:adbd_prop:s0
 persist.adb.tls_server.enable  u:object_r:system_adbd_prop:s0
