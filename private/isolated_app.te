@@ -14,6 +14,9 @@ isolated_app_domain(isolated_app)
 allow isolated_app self:process execmem;
 auditallow isolated_app self:process execmem;
 
+allow isolated_app { ashmem_device ashmem_libcutils_device }:chr_file execute;
+auditallow isolated_app { ashmem_device ashmem_libcutils_device }:chr_file execute;
+
 allow isolated_app webviewupdate_service:service_manager find;
 
 # Allow access to network sockets received over IPC. New socket creation is not
