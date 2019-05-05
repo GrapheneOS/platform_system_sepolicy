@@ -25,6 +25,9 @@ allow untrusted_app_25 privapp_data_file:file { r_file_perms execute };
 allow untrusted_app_25 app_data_file:file     { r_file_perms execute };
 auditallow untrusted_app_25 app_data_file:file execute;
 
+allow untrusted_app_25 { ashmem_device ashmem_libcutils_device }:chr_file execute;
+auditallow untrusted_app_25 { ashmem_device ashmem_libcutils_device }:chr_file execute;
+
 # b/35917228 - /proc/misc access
 # This will go away in a future Android release
 allow untrusted_app_25 proc_misc:file r_file_perms;
