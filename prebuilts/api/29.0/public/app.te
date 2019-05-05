@@ -13,6 +13,7 @@ allow appdomain self:process execmem;
 auditallow appdomain self:process execmem;
 
 allow appdomain ashmem_device:chr_file execute;
+auditallow appdomain ashmem_device:chr_file execute;
 
 # Receive and use open file descriptors inherited from zygote.
 allow appdomain zygote:fd use;
