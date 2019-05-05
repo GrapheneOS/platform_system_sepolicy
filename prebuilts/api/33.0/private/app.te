@@ -193,6 +193,7 @@ allowxperm { appdomain -isolated_app -ephemeral_app -sdk_sandbox } tun_device:ch
 
 # WebView and other application-specific JIT compilers
 allow appdomain self:process execmem;
+auditallow appdomain self:process execmem;
 
 allow appdomain { ashmem_device ashmem_libcutils_device }:chr_file execute;
 
