@@ -194,8 +194,6 @@ pdx_use({ appdomain -isolated_app_all -ephemeral_app -sdk_sandbox_all }, bufferh
 allow { appdomain -isolated_app_all -ephemeral_app -sdk_sandbox_all } tun_device:chr_file { read write getattr append ioctl };
 allowxperm { appdomain -isolated_app_all -ephemeral_app -sdk_sandbox_all } tun_device:chr_file ioctl TUNGETIFF;
 
-allow appdomain { ashmem_device ashmem_libcutils_device }:chr_file execute;
-
 # Receive and use open file descriptors inherited from zygote.
 allow appdomain zygote:fd use;
 

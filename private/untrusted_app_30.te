@@ -27,6 +27,9 @@ allow untrusted_app_30 privapp_data_file:file { r_file_perms execute };
 allow untrusted_app_30 app_data_file:file     { r_file_perms execute };
 auditallow untrusted_app_30 app_data_file:file execute;
 
+allow untrusted_app_30 { ashmem_device ashmem_libcutils_device }:chr_file execute;
+auditallow untrusted_app_30 { ashmem_device ashmem_libcutils_device }:chr_file execute;
+
 # allow sending RTM_GETNEIGH{TBL} messages.
 allow untrusted_app_30 self:netlink_route_socket nlmsg_getneigh;
 auditallow untrusted_app_30 self:netlink_route_socket nlmsg_getneigh;
