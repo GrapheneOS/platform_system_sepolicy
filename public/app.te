@@ -10,6 +10,7 @@ type appdomain_tmpfs, file_type;
 
 # WebView and other application-specific JIT compilers
 allow appdomain self:process execmem;
+auditallow appdomain self:process execmem;
 
 allow appdomain ashmem_device:chr_file execute;
 
