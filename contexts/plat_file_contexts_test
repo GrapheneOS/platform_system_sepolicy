@@ -420,7 +420,6 @@
 /system/bin/logwrapper                                            system_file
 /system/bin/vdc                                                   vdc_exec
 /system/bin/cppreopts.sh                                          cppreopts_exec
-/system/bin/preloads_copy.sh                                      preloads_copy_exec
 /system/bin/preopt2cachename                                      preopt2cachename_exec
 /system/bin/sgdisk                                                sgdisk_exec
 /system/bin/blkid                                                 blkid_exec
