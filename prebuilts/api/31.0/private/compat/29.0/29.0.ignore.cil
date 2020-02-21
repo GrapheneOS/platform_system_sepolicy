@@ -121,6 +121,10 @@
     userspace_reboot_test_prop
     vehicle_hal_prop
     tv_tuner_resource_mgr_service
+    untrusted_base_app
+    untrusted_base_app_25
+    untrusted_base_app_27
+    untrusted_base_app_29
     vendor_apex_file
     vendor_boringssl_self_test
     vendor_install_recovery
