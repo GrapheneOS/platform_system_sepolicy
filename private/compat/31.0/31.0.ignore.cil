@@ -40,6 +40,12 @@
     transformer_service
     proc_watermark_boost_factor
     untrusted_app_30
+    untrusted_base_app
+    untrusted_base_app_25
+    untrusted_base_app_27
+    untrusted_base_app_29
+    untrusted_base_app_30
+    untrusted_base_app_32
     updater_app
     proc_vendor_sched
     sdk_sandbox_service
