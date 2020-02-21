@@ -56,6 +56,16 @@
       <seinfo value="media" />
     </signer>
 
+    <!-- Shared dev key in AOSP -->
+    <signer signature="@SHARED" >
+      <seinfo value="base" />
+    </signer>
+
+    <!-- Release dev key in AOSP -->
+    <signer signature="@RELEASE" >
+      <seinfo value="base" />
+    </signer>
+
     <signer signature="@NETWORK_STACK" >
       <seinfo value="network_stack" />
     </signer>
