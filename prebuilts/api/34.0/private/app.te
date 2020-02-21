@@ -537,6 +537,11 @@ neverallow {
   -untrusted_app_29
   -untrusted_app_30
   -untrusted_app_32
+  -untrusted_base_app_25
+  -untrusted_base_app_27
+  -untrusted_base_app_29
+  -untrusted_base_app_30
+  -untrusted_base_app_32
 } apk_data_file:dir { watch watch_reads };
 neverallow {
   appdomain
@@ -545,4 +550,9 @@ neverallow {
   -untrusted_app_29
   -untrusted_app_30
   -untrusted_app_32
+  -untrusted_base_app_25
+  -untrusted_base_app_27
+  -untrusted_base_app_29
+  -untrusted_base_app_30
+  -untrusted_base_app_32
 } apk_data_file:file { watch watch_reads };
