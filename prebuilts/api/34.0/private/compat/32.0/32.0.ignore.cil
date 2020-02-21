@@ -76,6 +76,12 @@
     tare_service
     tv_iapp_service
     untrusted_app_30
+    untrusted_base_app
+    untrusted_base_app_25
+    untrusted_base_app_27
+    untrusted_base_app_29
+    untrusted_base_app_30
+    untrusted_base_app_32
     updater_app
     vendor_uuid_mapping_config_file
     vendor_vm_data_file
