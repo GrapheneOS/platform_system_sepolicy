@@ -77,6 +77,11 @@
     tare_service
     traced_oome_heap_session_count_prop
     tv_iapp_service
+    untrusted_base_app
+    untrusted_base_app_25
+    untrusted_base_app_27
+    untrusted_base_app_29
+    untrusted_base_app_30
     untrusted_app_30
     updater_app
     vendor_uuid_mapping_config_file
