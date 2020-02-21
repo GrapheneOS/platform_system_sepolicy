@@ -38,6 +38,11 @@
     snapuserd_proxy_socket
     tare_service
     transformer_service
+    untrusted_base_app
+    untrusted_base_app_25
+    untrusted_base_app_27
+    untrusted_base_app_29
+    untrusted_base_app_30
     proc_watermark_boost_factor
     proc_watermark_scale_factor
     untrusted_app_30
