@@ -28,7 +28,9 @@ coreAppdomain = {
         'shell',
         'system_app',
         'untrusted_app',
+        'untrusted_base_app',
         'untrusted_app_25',
+        'untrusted_base_app_25'
         }
 coredomainWhitelist = {
         'adbd',
