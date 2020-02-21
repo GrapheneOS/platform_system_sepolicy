@@ -6,5 +6,9 @@
 (typeattributeset new_objects
   ( new_objects
     hypervisor_prop
+    untrusted_base_app
+    untrusted_base_app_25
+    untrusted_base_app_27
+    untrusted_base_app_29
     updater_app
   ))
