@@ -187,6 +187,9 @@
     traced_probes_tmpfs
     traced_producer_socket
     traced_tmpfs
+    untrusted_base_app
+    untrusted_base_app_25
+    untrusted_base_app_27
     untrusted_app_all_devpts
     update_engine_log_data_file
     vendor_default_prop
