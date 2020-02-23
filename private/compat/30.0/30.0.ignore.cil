@@ -73,6 +73,8 @@
     hal_uwb_service
     hal_weaver_service
     hw_timeout_multiplier_prop
+    isolated_base_app
+    isolated_base_compute_app
     keystore_compat_hal_service
     keystore_maintenance_service
     keystore_metrics_service

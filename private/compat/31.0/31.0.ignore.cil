@@ -32,6 +32,8 @@
     hal_wifi_supplicant_service
     hal_nlinterceptor_service
     hypervisor_prop
+    isolated_base_app
+    isolated_base_compute_app
     locale_service
     power_stats_service
     snapuserd_prop
