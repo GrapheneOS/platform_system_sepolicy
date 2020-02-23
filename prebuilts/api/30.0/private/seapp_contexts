@@ -151,11 +151,14 @@ user=radio seinfo=platform domain=radio type=radio_data_file
 user=shared_relro domain=shared_relro
 user=shell seinfo=platform domain=shell name=com.android.shell type=shell_data_file
 user=webview_zygote seinfo=webview_zygote domain=webview_zygote
+user=_isolated seinfo=base domain=isolated_app levelFrom=user
 user=_isolated domain=isolated_app levelFrom=user
 user=_app seinfo=app_zygote domain=app_zygote levelFrom=user
 user=_app seinfo=media domain=mediaprovider name=android.process.media type=app_data_file levelFrom=user
 user=_app seinfo=platform domain=platform_app type=app_data_file levelFrom=user
+user=_app seinfo=base isEphemeralApp=true domain=ephemeral_app type=app_data_file levelFrom=all
 user=_app isEphemeralApp=true domain=ephemeral_app type=app_data_file levelFrom=all
+user=_app seinfo=base isPrivApp=true domain=priv_app type=privapp_data_file levelFrom=user
 user=_app isPrivApp=true domain=priv_app type=privapp_data_file levelFrom=user
 user=_app isPrivApp=true name=com.google.android.permissioncontroller domain=permissioncontroller_app type=privapp_data_file levelFrom=all
 user=_app isPrivApp=true name=com.android.providers.media.module domain=mediaprovider_app type=privapp_data_file levelFrom=all
@@ -167,10 +170,17 @@ user=_app isPrivApp=true name=com.android.vzwomatrigger domain=vzwomatrigger_app
 #user=_app isPrivApp=true name=com.google.android.gms:* domain=gmscore_app type=privapp_data_file levelFrom=user
 #user=_app isPrivApp=true name=com.google.android.gsf domain=gmscore_app type=privapp_data_file levelFrom=user
 user=_app isPrivApp=true name=app.seamlessupdate.client domain=updater_app type=app_data_file levelFrom=user
+user=_app seinfo=base minTargetSdkVersion=30 domain=untrusted_app type=app_data_file levelFrom=all
 user=_app minTargetSdkVersion=30 domain=untrusted_app type=app_data_file levelFrom=all
+user=_app seinfo=base minTargetSdkVersion=29 domain=untrusted_app_29 type=app_data_file levelFrom=all
 user=_app minTargetSdkVersion=29 domain=untrusted_app_29 type=app_data_file levelFrom=all
+user=_app seinfo=base minTargetSdkVersion=28 domain=untrusted_app_27 type=app_data_file levelFrom=all
 user=_app minTargetSdkVersion=28 domain=untrusted_app_27 type=app_data_file levelFrom=all
+user=_app seinfo=base minTargetSdkVersion=26 domain=untrusted_app_27 type=app_data_file levelFrom=user
 user=_app minTargetSdkVersion=26 domain=untrusted_app_27 type=app_data_file levelFrom=user
+user=_app seinfo=base domain=untrusted_app_25 type=app_data_file levelFrom=user
 user=_app domain=untrusted_app_25 type=app_data_file levelFrom=user
+user=_app seinfo=base minTargetSdkVersion=28 fromRunAs=true domain=runas_app levelFrom=all
 user=_app minTargetSdkVersion=28 fromRunAs=true domain=runas_app levelFrom=all
+user=_app seinfo=base fromRunAs=true domain=runas_app levelFrom=user
 user=_app fromRunAs=true domain=runas_app levelFrom=user
