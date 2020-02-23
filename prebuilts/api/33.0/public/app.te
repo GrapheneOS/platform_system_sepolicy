@@ -32,7 +32,7 @@ neverallow appdomain {
 }:chr_file { read write };
 
 # Note: Try expanding list of app domains in the future.
-neverallow { untrusted_app untrusted_base_app isolated_app shell } graphics_device:chr_file { read write };
+neverallow { untrusted_app untrusted_base_app isolated_app isolated_base_app shell } graphics_device:chr_file { read write };
 
 neverallow { appdomain -nfc } nfc_device:chr_file
     { read write };

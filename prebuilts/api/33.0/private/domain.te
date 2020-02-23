@@ -631,6 +631,7 @@ neverallow {
 } system_app_data_file:dir_file_class_set { create unlink open };
 neverallow {
   isolated_app
+  isolated_base_app
   ephemeral_app
   priv_app
   sdk_sandbox
