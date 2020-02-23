@@ -14,11 +14,11 @@
 
 ; Apps, except isolated apps, are clients of OMX-related services
 ; Unfortunately, we can't currently express this in module policy language:
-(typeattributeset hal_omx_client ((and (appdomain) ((not (isolated_app))))))
+(typeattributeset hal_omx_client ((and (appdomain) ((not (or (isolated_app) (isolated_base_app)))))))
 
 ; Apps, except isolated apps, are clients of Codec2-related services
 ; Unfortunately, we can't currently express this in module policy language:
-(typeattributeset hal_codec2_client ((and (appdomain) ((not (isolated_app))))))
+(typeattributeset hal_codec2_client ((and (appdomain) ((not (or (isolated_app) (isolated_base_app)))))))
 
 ; Apps, except isolated apps and SDK sandboxes, are clients of Drm-related services
 ; Unfortunately, we can't currently express this in module policy language:
@@ -31,8 +31,8 @@
 
 ; Apps, except isolated apps, are clients of Graphics Allocator HAL
 ; Unfortunately, we can't currently express this in module policy language:
-;     typeattribute { appdomain -isolated_app } hal_graphics_allocator_client;
-(typeattributeset hal_graphics_allocator_client ((and (appdomain) ((not (isolated_app))))))
+;     typeattribute { appdomain -isolated_app -isolated_base_app } hal_graphics_allocator_client;
+(typeattributeset hal_graphics_allocator_client ((and (appdomain) ((not (or (isolated_app) (isolated_base_app)))))))
 
 ; Apps, except isolated apps, are clients of Cas HAL
 ; Unfortunately, we can't currently express this in module policy language:
@@ -47,7 +47,7 @@
 ; Apps, except isolated apps, are clients of Neuralnetworks HAL
 ; Unfortunately, we can't currently express this in module policy language:
 ;     typeattribute { appdomain -isolated_app_all } hal_neuralnetworks_client;
-(typeattributeset hal_neuralnetworks_client ((and (appdomain) ((not (isolated_app))))))
+(typeattributeset hal_neuralnetworks_client ((and (appdomain) ((not (or (isolated_app) (isolated_base_app)))))))
 
 ; TODO(b/112056006): move these to mapping files when/if we implement 'versioned' attributes.
 ; Rename untrusted_app_visible_* to untrusted_app_visible_*_violators.
