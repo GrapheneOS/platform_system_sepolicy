@@ -72,6 +72,7 @@
     iorap_prefetcherd_data_file
     iorap_prefetcherd_exec
     iorap_prefetcherd_tmpfs
+    isolated_base_app
     mediatranscoding_service
     mediatranscoding
     mediatranscoding_exec
