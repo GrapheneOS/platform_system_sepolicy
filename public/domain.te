@@ -84,7 +84,7 @@ allow { domain -hwservicemanager -vndservicemanager } binder_device:chr_file rw_
 allow domain binderfs:dir { getattr search };
 allow domain binderfs_logs_proc:dir search;
 
-allow { domain -servicemanager -vndservicemanager -isolated_app } hwbinder_device:chr_file rw_file_perms;
+allow { domain -servicemanager -vndservicemanager -isolated_app -isolated_base_app } hwbinder_device:chr_file rw_file_perms;
 allow domain ptmx_device:chr_file rw_file_perms;
 allow domain random_device:chr_file rw_file_perms;
 allow domain proc_random:dir r_dir_perms;
@@ -1170,6 +1170,7 @@ neverallow {
 } system_app_data_file:dir_file_class_set { create unlink open };
 neverallow {
   isolated_app
+  isolated_base_app
   untrusted_app_all # finer-grained rules for appdomain are listed below
   ephemeral_app
   priv_app
