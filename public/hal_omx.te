@@ -2,7 +2,7 @@
 # since OMX must always be in its own process.
 
 binder_call(hal_omx_server, binderservicedomain)
-binder_call(hal_omx_server, { appdomain -isolated_app })
+binder_call(hal_omx_server, { appdomain -isolated_app -isolated_base_app })
 
 # Allow hal_omx_server access to composer sync fences
 allow hal_omx_server hal_graphics_composer:fd use;
