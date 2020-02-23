@@ -19,6 +19,7 @@ allow app_zygote self:global_capability_class_set setpcap;
 # Switch SELinux context to isolated app domain.
 allow app_zygote self:process setcurrent;
 allow app_zygote isolated_app:process dyntransition;
+allow app_zygote isolated_base_app:process dyntransition;
 
 # For JIT
 allow app_zygote self:process execmem;
@@ -33,6 +34,7 @@ allow app_zygote system_server:process getpgid;
 
 # Interaction between the app_zygote and its children.
 allow app_zygote isolated_app:process setpgid;
+allow app_zygote isolated_base_app:process setpgid;
 
 # TODO (b/63631799) fix this access
 dontaudit app_zygote mnt_expand_file:dir getattr;
@@ -72,7 +74,7 @@ allow app_zygote system_data_file:file { getattr read map };
 #####
 
 # Only permit transition to isolated_app.
-neverallow app_zygote { domain -isolated_app }:process dyntransition;
+neverallow app_zygote { domain -isolated_app -isolated_base_app }:process dyntransition;
 
 # Only setcon() transitions, no exec() based transitions, except for crash_dump.
 neverallow app_zygote { domain -crash_dump }:process transition;
