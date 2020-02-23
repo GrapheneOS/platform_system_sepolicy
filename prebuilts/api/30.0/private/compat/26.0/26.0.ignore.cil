@@ -103,6 +103,7 @@
     iorapd_exec
     iorapd_service
     iorapd_tmpfs
+    isolated_base_app
     kmsg_debug_device
     last_boot_reason_prop
     llkd
