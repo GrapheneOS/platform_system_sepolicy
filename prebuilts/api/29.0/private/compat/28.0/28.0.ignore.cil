@@ -92,6 +92,7 @@
     iorapd_data_file
     iorapd_service
     iorapd_tmpfs
+    isolated_base_app
     mediaswcodec
     mediaswcodec_exec
     mediaswcodec_tmpfs
@@ -139,6 +140,9 @@
     traced_lazy_prop
     uri_grants_service
     use_memfd_prop
+    untrusted_base_app
+    untrusted_base_app_25
+    untrusted_base_app_27
     vendor_cgroup_desc_file
     vendor_idc_file
     vendor_keychars_file
