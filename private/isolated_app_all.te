@@ -46,20 +46,20 @@ neverallow isolated_app_all anr_data_file:file ~{ open append };
 neverallow isolated_app_all anr_data_file:dir ~search;
 
 # Isolated apps must not be permitted to use HwBinder
-neverallow { isolated_app_all -isolated_compute_app } hwbinder_device:chr_file *;
-neverallow { isolated_app_all -isolated_compute_app } *:hwservice_manager *;
+neverallow { isolated_app_all -isolated_compute_app -isolated_base_compute_app } hwbinder_device:chr_file *;
+neverallow { isolated_app_all -isolated_compute_app -isolated_base_compute_app } *:hwservice_manager *;
 
 # Isolated apps must not be permitted to use VndBinder
 neverallow isolated_app_all vndbinder_device:chr_file *;
 
 # Isolated apps must not be permitted to perform actions on Binder and VndBinder service_manager
 # except the find actions for services allowlisted below.
-neverallow { isolated_app_all -isolated_compute_app } *:service_manager ~find;
+neverallow { isolated_app_all -isolated_compute_app -isolated_base_compute_app } *:service_manager ~find;
 
 # b/17487348
 # Isolated apps can only access three services,
 # activity_service, display_service, webviewupdate_service.
-neverallow { isolated_app_all -isolated_compute_app } {
+neverallow { isolated_app_all -isolated_compute_app -isolated_base_compute_app } {
     service_manager_type
     -activity_service
     -display_service
@@ -90,7 +90,7 @@ neverallow isolated_app_all webview_zygote:sock_file write;
 # for controlling isolated_app_all attack surface.
 # TODO (b/266555480): The permission should be guarded by compliance test.
 # Remove the negation for member domains when refactorization is done.
-neverallow { isolated_app_all -isolated_compute_app } {
+neverallow { isolated_app_all -isolated_compute_app -isolated_base_compute_app } {
   sysfs_type
   -sysfs_devices_system_cpu
   -sysfs_transparent_hugepage
