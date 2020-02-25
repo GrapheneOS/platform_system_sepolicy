@@ -19,6 +19,12 @@ bluetooth_domain(untrusted_app_29)
 allow untrusted_app_29 self:process execmem;
 auditallow untrusted_app_29 self:process execmem;
 
+# Some apps ship with shared libraries and binaries that they write out
+# to their sandbox directory and then execute.
+allow untrusted_app_29 privapp_data_file:file { r_file_perms execute };
+allow untrusted_app_29 app_data_file:file     { r_file_perms execute };
+auditallow untrusted_app_29 app_data_file:file execute;
+
 # allow sending RTM_GETNEIGH{TBL} messages.
 allow untrusted_app_29 self:netlink_route_socket nlmsg_getneigh;
 auditallow untrusted_app_29 self:netlink_route_socket nlmsg_getneigh;
