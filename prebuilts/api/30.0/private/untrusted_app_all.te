@@ -20,12 +20,6 @@
 ### Note that rules that should apply to all untrusted apps must be in app.te or also
 ### added to ephemeral_app.te.
 
-# Some apps ship with shared libraries and binaries that they write out
-# to their sandbox directory and then execute.
-allow untrusted_app_all privapp_data_file:file { r_file_perms execute };
-allow untrusted_app_all app_data_file:file     { r_file_perms execute };
-auditallow untrusted_app_all app_data_file:file execute;
-
 # Chrome Crashpad uses the the dynamic linker to load native executables
 # from an APK (b/112050209, crbug.com/928422)
 allow untrusted_app_all system_linker_exec:file execute_no_trans;
