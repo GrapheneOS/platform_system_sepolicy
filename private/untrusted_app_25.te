@@ -65,3 +65,6 @@ auditallow untrusted_app_25 self:netlink_route_socket nlmsg_getneigh;
 
 # Allow hidden build props
 get_prop({ untrusted_app_25 userdebug_or_eng(`-untrusted_app_25') }, userdebug_or_eng_prop)
+
+allow untrusted_app_25 { ashmem_device ashmem_libcutils_device }:chr_file execute;
+auditallow untrusted_app_25 { ashmem_device ashmem_libcutils_device }:chr_file execute;
