@@ -10,6 +10,10 @@ typeattribute isolated_app coredomain;
 
 app_domain(isolated_app)
 
+# WebView and other application-specific JIT compilers
+allow isolated_app self:process execmem;
+auditallow isolated_app self:process execmem;
+
 # Access already open app data files received over Binder or local socket IPC.
 allow isolated_app { app_data_file privapp_data_file sdk_sandbox_data_file}:file { append read write getattr lock map };
 
