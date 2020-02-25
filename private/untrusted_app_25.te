@@ -67,6 +67,12 @@ auditallow untrusted_app_25 app_data_file:file execute;
 allow untrusted_app_25 dex2oat_exec:file rx_file_perms;
 userdebug_or_eng(`auditallow untrusted_app_25 dex2oat_exec:file rx_file_perms;')
 
+
+# Allow access to ashmemd to request /dev/ashmem fds.
+binder_call(untrusted_app_25, ashmemd)
+allow untrusted_app_25 ashmem_device:chr_file { getattr read ioctl lock map append write execute };
+auditallow untrusted_app_25 ashmem_device:chr_file { getattr read ioctl lock map append write execute };
+
 # The ability to talk to /dev/ashmem directly. targetApi>=29 must use
 # ASharedMemory instead.
 allow untrusted_app_25 ashmem_device:chr_file rw_file_perms;
