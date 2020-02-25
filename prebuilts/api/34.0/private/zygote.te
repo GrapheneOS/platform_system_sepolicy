@@ -110,7 +110,6 @@ allow zygote sdk_sandbox_system_data_file:dir { getattr relabelto search };
 allow zygote proc_filesystems:file r_file_perms;
 
 # Allow zygote to create JIT memory.
-allow zygote self:process execmem;
 allow zygote zygote_tmpfs:file execute;
 allow zygote ashmem_libcutils_device:chr_file execute;
 
