@@ -17,9 +17,6 @@ allow app_zygote self:global_capability_class_set setpcap;
 allow app_zygote self:process setcurrent;
 allow app_zygote isolated_app:process dyntransition;
 
-# For JIT
-allow app_zygote self:process execmem;
-
 # Allow exec mapping from tmpfs (memfds) for binary translation
 allow app_zygote app_zygote_tmpfs:file execute;
 
