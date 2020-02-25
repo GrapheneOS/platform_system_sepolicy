@@ -38,9 +38,6 @@ allow webview_zygote apex_module_data_file:dir search;
 # To load overlay from /apex (vendor APEXes)
 allow webview_zygote vendor_apex_metadata_file:dir search;
 
-# Allow webview_zygote to create JIT memory.
-allow webview_zygote self:process execmem;
-
 # Allow webview_zygote to stat the files that it opens. It must
 # be able to inspect them so that it can reopen them on fork
 # if necessary: b/30963384.
