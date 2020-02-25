@@ -24,3 +24,6 @@ auditallow untrusted_app self:process execmem;
 allow untrusted_app privapp_data_file:file { r_file_perms execute };
 allow untrusted_app app_data_file:file     { r_file_perms execute };
 auditallow untrusted_app app_data_file:file execute;
+
+allow untrusted_app { ashmem_device ashmem_libcutils_device }:chr_file execute;
+auditallow untrusted_app { ashmem_device ashmem_libcutils_device }:chr_file execute;
