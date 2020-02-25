@@ -5,6 +5,10 @@ untrusted_app_domain(runas_app)
 net_domain(runas_app)
 bluetooth_domain(runas_app)
 
+allow runas_app privapp_data_file:file { r_file_perms execute };
+allow runas_app app_data_file:file     { r_file_perms execute };
+auditallow runas_app app_data_file:file execute;
+
 # The ability to call exec() on files in the apps home directories
 # when using run-as on a debuggable app. Used to run lldb/ndk-gdb/simpleperf,
 # which are copied to the apps home directories.
