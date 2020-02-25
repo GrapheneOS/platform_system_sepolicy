@@ -90,7 +90,6 @@ allow zygote {
 }:dir getattr;
 
 # Allow zygote to create JIT memory.
-allow zygote self:process execmem;
 allow zygote zygote_tmpfs:file execute;
 allow zygote ashmem_libcutils_device:chr_file execute;
 
