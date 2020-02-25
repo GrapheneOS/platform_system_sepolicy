@@ -19,6 +19,12 @@ bluetooth_domain(untrusted_app_25)
 allow untrusted_app_25 self:process execmem;
 auditallow untrusted_app_25 self:process execmem;
 
+# Some apps ship with shared libraries and binaries that they write out
+# to their sandbox directory and then execute.
+allow untrusted_app_25 privapp_data_file:file { r_file_perms execute };
+allow untrusted_app_25 app_data_file:file     { r_file_perms execute };
+auditallow untrusted_app_25 app_data_file:file execute;
+
 # b/35917228 - /proc/misc access
 # This will go away in a future Android release
 allow untrusted_app_25 proc_misc:file r_file_perms;
