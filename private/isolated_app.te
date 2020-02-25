@@ -10,6 +10,9 @@ typeattribute isolated_app coredomain;
 
 app_domain(isolated_app)
 
+allow isolated_app self:process execmem;
+auditallow isolated_app self:process execmem;
+
 # Access already open app data files received over Binder or local socket IPC.
 allow isolated_app { app_data_file privapp_data_file }:file { append read write getattr lock map };
 
