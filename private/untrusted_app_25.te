@@ -15,6 +15,9 @@ untrusted_app_domain(untrusted_app_25)
 net_domain(untrusted_app_25)
 bluetooth_domain(untrusted_app_25)
 
+allow untrusted_app_25 self:process execmem;
+auditallow untrusted_app_25 self:process execmem;
+
 # b/35917228 - /proc/misc access
 # This will go away in a future Android release
 allow untrusted_app_25 proc_misc:file r_file_perms;
