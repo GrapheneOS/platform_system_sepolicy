@@ -16,6 +16,9 @@ typeattribute ephemeral_app coredomain;
 net_domain(ephemeral_app)
 app_domain(ephemeral_app)
 
+allow ephemeral_app self:process execmem;
+auditallow ephemeral_app self:process execmem;
+
 # Allow ephemeral apps to read/write files in visible storage if provided fds
 allow ephemeral_app { sdcard_type media_rw_data_file }:file {read write getattr ioctl lock append};
 
