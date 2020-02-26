@@ -185,6 +185,28 @@ neverallow { domain -$1 -crash_dump userdebug_or_eng(`-llkd') -runas_app -simple
 ')
 
 #####################################
+# hardened_app_domain(domain)
+# Allow the same base set of permissions as per app_domain
+# but removes tmpfs:file execute
+define(`hardened_app_domain', `
+typeattribute $1 appdomain;
+# Label tmpfs objects for all apps.
+type_transition $1 tmpfs:file appdomain_tmpfs;
+allow $1 appdomain_tmpfs:file { getattr map read write };
+neverallow { $1 -runas_app -shell -simpleperf } { domain -$1 }:file no_rw_file_perms;
+neverallow { appdomain -runas_app -shell -simpleperf -$1 } $1:file no_rw_file_perms;
+# The Android security model guarantees the confidentiality and integrity
+# of application data and execution state. Ptrace bypasses those
+# confidentiality guarantees. Disallow ptrace access from system components to
+# apps. crash_dump is excluded, as it needs ptrace access to produce stack
+# traces. runas_app is excluded, as it operates only on debuggable apps.
+# simpleperf is excluded, as it operates only on debuggable or profileable
+# apps. llkd is excluded, as it needs ptrace access to inspect stack traces for
+# live lock conditions.
+neverallow { domain -$1 -crash_dump userdebug_or_eng(`-llkd') -runas_app -simpleperf } $1:process ptrace;
+')
+
+#####################################
 # untrusted_app_domain(domain)
 # Allow a base set of permissions required for all untrusted apps.
 define(`untrusted_app_domain', `
