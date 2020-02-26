@@ -140,7 +140,7 @@ neverallow user=shell name=((?!com\.android\.shell).)*
 # Ephemeral Apps must run in the ephemeral_app domain
 neverallow isEphemeralApp=true domain=((?!ephemeral_app).)*
 
-isSystemServer=true domain=system_server_startup
+isSystemServer=true domain=system_server
 
 user=_app seinfo=base isPrivApp=true name=com.android.traceur domain=traceur_app type=app_data_file levelFrom=all
 user=_app isPrivApp=true name=com.android.traceur domain=traceur_app type=app_data_file levelFrom=all
