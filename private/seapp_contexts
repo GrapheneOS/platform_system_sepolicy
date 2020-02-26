@@ -137,9 +137,7 @@
 
 # only the system server can be assigned the system_server domains
 neverallow isSystemServer=false domain=system_server
-neverallow isSystemServer=false domain=system_server_startup
 neverallow isSystemServer="" domain=system_server
-neverallow isSystemServer="" domain=system_server_startup
 
 # system domains should never be assigned outside of system uid
 neverallow user=((?!system).)* domain=system_app
@@ -174,7 +172,7 @@ neverallow user=shell name=((?!com\.android\.shell).)*
 # Ephemeral Apps must run in the ephemeral_app domain
 neverallow isEphemeralApp=true domain=((?!ephemeral_app).)*
 
-isSystemServer=true domain=system_server_startup
+isSystemServer=true domain=system_server
 
 # sdksandbox must run in an sdksandbox domain
 neverallow user=_sdksandbox domain=((?!sdk_sandbox).)*
