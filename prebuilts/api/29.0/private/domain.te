@@ -196,7 +196,6 @@ neverallow {
     with_asan(`-asan_extract')
     -shell
     userdebug_or_eng(`-su')
-    -system_server_startup # for memfd backed executable regions
     -app_zygote
     -webview_zygote
     -zygote
