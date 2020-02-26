@@ -136,7 +136,7 @@ neverallow user=shell name=((?!com\.android\.shell).)*
 # Ephemeral Apps must run in the ephemeral_app domain
 neverallow isEphemeralApp=true domain=((?!ephemeral_app).)*
 
-isSystemServer=true domain=system_server_startup
+isSystemServer=true domain=system_server
 
 # sdksandbox must run in the sdksandbox domain
 neverallow name=com.android.sdksandbox domain=((?!sdk_sandbox).)*
