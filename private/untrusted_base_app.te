@@ -10,7 +10,7 @@
 
 typeattribute untrusted_base_app coredomain;
 
-app_domain(untrusted_base_app)
+hardened_app_domain(untrusted_base_app)
 untrusted_app_domain(untrusted_base_app)
 net_domain(untrusted_base_app)
 bluetooth_domain(untrusted_base_app)
