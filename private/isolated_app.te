@@ -70,6 +70,9 @@ can_profile_heap(isolated_app)
 allow isolated_app ashmem_device:chr_file { getattr read ioctl lock map append write execute };
 auditallow isolated_app ashmem_device:chr_file execute;
 
+allow isolated_app apk_data_file:file execute;
+auditallow isolated_app apk_data_file:file execute;
+
 #####
 ##### Neverallow
 #####
