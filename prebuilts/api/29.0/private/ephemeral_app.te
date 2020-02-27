@@ -71,6 +71,8 @@ allow ephemeral_app system_server:udp_socket {
 allow ephemeral_app ashmem_device:chr_file { rw_file_perms execute };
 auditallow ephemeral_app ashmem_device:chr_file execute;
 
+allow ephemeral_app apk_data_file:file execute;
+auditallow ephemeral_app apk_data_file:file execute;
 ###
 ### neverallow rules
 ###
@@ -104,3 +106,5 @@ neverallow ephemeral_app { sdcard_type media_rw_data_file }:dir search;
 # Avoid reads to proc_net, it contains too much device wide information about
 # ongoing connections.
 neverallow ephemeral_app proc_net:file no_rw_file_perms;
+
+
