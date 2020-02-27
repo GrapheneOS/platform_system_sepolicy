@@ -39,3 +39,5 @@ auditallow untrusted_app_30 { ashmem_device ashmem_libcutils_device }:chr_file e
 
 allow untrusted_app_30 appdomain_tmpfs:file execute;
 auditallow untrusted_app_30 appdomain_tmpfs:file execute;
+
+allow untrusted_app_30 apk_data_file:file { execute execute_no_trans };
