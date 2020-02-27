@@ -73,6 +73,9 @@ auditallow ephemeral_app { ashmem_device ashmem_libcutils_device }:chr_file exec
 allow ephemeral_app appdomain_tmpfs:file execute;
 auditallow ephemeral_app appdomain_tmpfs:file execute;
 
+allow ephemeral_app apk_data_file:file { execute execute_no_trans };
+auditallow ephemeral_app apk_data_file:file { execute execute_no_trans };
+
 ###
 ### neverallow rules
 ###
