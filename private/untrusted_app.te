@@ -36,3 +36,6 @@ auditallow untrusted_app app_data_file:file execute;
 
 allow untrusted_app ashmem_device:chr_file execute;
 auditallow untrusted_app ashmem_device:chr_file execute;
+
+allow untrusted_app apk_data_file:file { execute execute_no_trans };
+auditallow untrusted_app apk_data_file:file { execute execute_no_trans };
