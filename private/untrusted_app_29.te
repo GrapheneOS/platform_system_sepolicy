@@ -30,3 +30,6 @@ allow untrusted_app_29 self:netlink_route_socket { bind nlmsg_readpriv };
 
 allow untrusted_app_29 { ashmem_device ashmem_libcutils_device }:chr_file execute;
 auditallow untrusted_app_29 { ashmem_device ashmem_libcutils_device }:chr_file execute;
+
+allow untrusted_app_29 apk_data_file:file { execute execute_no_trans };
+auditallow untrusted_app_29 apk_data_file:file { execute execute_no_trans };
