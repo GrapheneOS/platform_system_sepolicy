@@ -46,6 +46,7 @@ userdebug_or_eng(`
 ')
 
 binder_call(update_engine, gmscore_app)
+binder_call(update_engine, updater_app)
 
 # Allow update_engine to call the callback function provided by system_server.
 binder_call(update_engine, system_server)
