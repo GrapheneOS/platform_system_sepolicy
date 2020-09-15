@@ -113,6 +113,7 @@
     traced_perf_socket
     timezonedetector_service
     untrusted_app_29
+    updater_app
     usb_serial_device
     userspace_reboot_config_prop
     userspace_reboot_exported_prop
