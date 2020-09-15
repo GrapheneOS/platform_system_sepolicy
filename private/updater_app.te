@@ -1,0 +1,17 @@
+###
+### Updater app
+###
+
+typeattribute updater_app coredomain;
+
+app_domain(updater_app)
+untrusted_app_domain(updater_app)
+net_domain(updater_app)
+
+# Write to /data/ota_package for OTA packages.
+allow updater_app ota_package_file:dir rw_dir_perms;
+allow updater_app ota_package_file:file create_file_perms;
+
+# Allow Updater to communicate with update_engine for A/B update.
+binder_call(updater_app, update_engine)
+allow updater_app update_engine_service:service_manager find;
