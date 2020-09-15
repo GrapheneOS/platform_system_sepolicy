@@ -138,6 +138,7 @@
     texttospeech_service
     translation_service
     update_engine_stable_service
+    updater_app
     userdata_sysdev
     userspace_reboot_metadata_file
     uwb_service
