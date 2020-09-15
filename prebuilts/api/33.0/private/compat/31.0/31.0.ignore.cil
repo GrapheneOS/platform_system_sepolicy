@@ -41,6 +41,7 @@
     proc_watermark_boost_factor
     proc_watermark_scale_factor
     untrusted_app_30
+    updater_app
     proc_vendor_sched
     sdk_sandbox_service
     sysfs_fs_fuse_bpf
