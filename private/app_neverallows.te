@@ -130,7 +130,7 @@ neverallow { all_untrusted_apps -mediaprovider } { cache_file cache_recovery_fil
 # World accessible data locations allow application to fill the device
 # with unaccounted for data. This data will not get removed during
 # application un-installation.
-neverallow { all_untrusted_apps -mediaprovider } {
+neverallow { all_untrusted_apps -mediaprovider -updater_app } {
   fs_type
   -sdcard_type
   file_type
