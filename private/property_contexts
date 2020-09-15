@@ -98,6 +98,8 @@ test.userspace_reboot.requested u:object_r:userspace_reboot_test_prop:s0
 sys.lmk.                u:object_r:system_lmk_prop:s0
 sys.trace.              u:object_r:system_trace_prop:s0
 
+security.deny_new_usb   u:object_r:system_prop:s0
+
 # Fastbootd protocol control property
 fastbootd.protocol    u:object_r:fastbootd_protocol_prop:s0 exact enum usb tcp
 
