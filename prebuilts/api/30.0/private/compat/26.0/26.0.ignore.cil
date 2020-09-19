@@ -103,6 +103,7 @@
     iorapd_exec
     iorapd_service
     iorapd_tmpfs
+    isolated_base_app
     kmsg_debug_device
     last_boot_reason_prop
     llkd
@@ -190,6 +191,9 @@
     traced_probes_tmpfs
     traced_producer_socket
     traced_tmpfs
+    untrusted_base_app
+    untrusted_base_app_25
+    untrusted_base_app_27
     untrusted_app_all_devpts
     update_engine_log_data_file
     vendor_default_prop

@@ -28,8 +28,8 @@ allow appdomain dalvikcache_data_file:dir { search getattr };
 allow appdomain dalvikcache_data_file:file r_file_perms;
 
 # Read the /sdcard and /mnt/sdcard symlinks
-allow { appdomain -isolated_app } rootfs:lnk_file r_file_perms;
-allow { appdomain -isolated_app } tmpfs:lnk_file r_file_perms;
+allow { appdomain -isolated_app -isolated_base_app } rootfs:lnk_file r_file_perms;
+allow { appdomain -isolated_app -isolated_base_app } tmpfs:lnk_file r_file_perms;
 
 # Search /storage/emulated tmpfs mount.
 allow appdomain tmpfs:dir r_dir_perms;
@@ -66,8 +66,8 @@ allow appdomain appdomain:fifo_file rw_file_perms;
 allow appdomain surfaceflinger:unix_stream_socket { read write setopt getattr getopt shutdown };
 
 # App sandbox file accesses.
-allow { appdomain -isolated_app } { app_data_file privapp_data_file }:dir create_dir_perms;
-allow { appdomain -isolated_app } { app_data_file privapp_data_file }:file create_file_perms;
+allow { appdomain -isolated_app -isolated_base_app } { app_data_file privapp_data_file }:dir create_dir_perms;
+allow { appdomain -isolated_app -isolated_base_app } { app_data_file privapp_data_file }:file create_file_perms;
 
 # Traverse into expanded storage
 allow appdomain mnt_expand_file:dir r_dir_perms;
@@ -78,7 +78,7 @@ allow appdomain misc_user_data_file:dir r_dir_perms;
 allow appdomain misc_user_data_file:file r_file_perms;
 
 # TextClassifier
-r_dir_file({ appdomain -isolated_app }, textclassifier_data_file)
+r_dir_file({ appdomain -isolated_app -isolated_base_app }, textclassifier_data_file)
 
 # Access to OEM provided data and apps
 allow appdomain oemfs:dir r_dir_perms;
@@ -101,7 +101,7 @@ not_full_treble(`
 
 full_treble_only(`
     # For looking up Renderscript vendor drivers
-    allow { appdomain -isolated_app } vendor_file:dir { open read };
+    allow { appdomain -isolated_app -isolated_base_app } vendor_file:dir { open read };
 ')
 
 # Allow apps access to /vendor/app except for privileged
@@ -186,6 +186,7 @@ r_dir_file({
   appdomain
   -ephemeral_app
   -isolated_app
+  -isolated_base_app
   -platform_app
   -priv_app
   -shell
@@ -198,6 +199,7 @@ userdebug_or_eng(`
     appdomain
     -ephemeral_app
     -isolated_app
+    -isolated_base_app
     -platform_app
     -priv_app
     -shell
@@ -209,7 +211,7 @@ userdebug_or_eng(`
 
 # Grant GPU access to all processes started by Zygote.
 # They need that to render the standard UI.
-allow { appdomain -isolated_app } gpu_device:chr_file rw_file_perms;
+allow { appdomain -isolated_app -isolated_base_app } gpu_device:chr_file rw_file_perms;
 
 # Use the Binder.
 binder_use(appdomain)
@@ -239,33 +241,33 @@ allow appdomain system_data_file:lnk_file r_file_perms;
 allow appdomain system_data_file:file { getattr read map };
 
 # Allow read/stat of /data/media files passed by Binder or local socket IPC.
-allow { appdomain -isolated_app } media_rw_data_file:file { read getattr };
+allow { appdomain -isolated_app -isolated_base_app } media_rw_data_file:file { read getattr };
 
 # Read and write /data/data/com.android.providers.telephony files passed over Binder.
-allow { appdomain -isolated_app } radio_data_file:file { read write getattr };
+allow { appdomain -isolated_app -isolated_base_app } radio_data_file:file { read write getattr };
 
 # Allow access to external storage; we have several visible mount points under /storage
 # and symlinks to primary storage at places like /storage/sdcard0 and /mnt/user/0/primary
-allow { appdomain -isolated_app -ephemeral_app } storage_file:dir r_dir_perms;
-allow { appdomain -isolated_app -ephemeral_app } storage_file:lnk_file r_file_perms;
-allow { appdomain -isolated_app -ephemeral_app } mnt_user_file:dir r_dir_perms;
-allow { appdomain -isolated_app -ephemeral_app } mnt_user_file:lnk_file r_file_perms;
+allow { appdomain -isolated_app -isolated_base_app -ephemeral_app } storage_file:dir r_dir_perms;
+allow { appdomain -isolated_app -isolated_base_app -ephemeral_app } storage_file:lnk_file r_file_perms;
+allow { appdomain -isolated_app -isolated_base_app -ephemeral_app } mnt_user_file:dir r_dir_perms;
+allow { appdomain -isolated_app -isolated_base_app -ephemeral_app } mnt_user_file:lnk_file r_file_perms;
 
 # Read/write visible storage
-allow { appdomain -isolated_app -ephemeral_app } sdcard_type:dir create_dir_perms;
-allow { appdomain -isolated_app -ephemeral_app } sdcard_type:file create_file_perms;
+allow { appdomain -isolated_app -isolated_base_app -ephemeral_app } sdcard_type:dir create_dir_perms;
+allow { appdomain -isolated_app -isolated_base_app -ephemeral_app } sdcard_type:file create_file_perms;
 # This should be removed if sdcardfs is modified to alter the secontext for its
 # accesses to the underlying FS.
-allow { appdomain -isolated_app -ephemeral_app } media_rw_data_file:dir create_dir_perms;
-allow { appdomain -isolated_app -ephemeral_app } media_rw_data_file:file create_file_perms;
+allow { appdomain -isolated_app -isolated_base_app -ephemeral_app } media_rw_data_file:dir create_dir_perms;
+allow { appdomain -isolated_app -isolated_base_app -ephemeral_app } media_rw_data_file:file create_file_perms;
 
 # Allow apps to use the USB Accessory interface.
 # http://developer.android.com/guide/topics/connectivity/usb/accessory.html
 #
 # USB devices are first opened by the system server (USBDeviceManagerService)
 # and the file descriptor is passed to the right Activity via binder.
-allow { appdomain -isolated_app -ephemeral_app } usb_device:chr_file { read write getattr ioctl };
-allow { appdomain -isolated_app -ephemeral_app } usbaccessory_device:chr_file { read write getattr };
+allow { appdomain -isolated_app -isolated_base_app -ephemeral_app } usb_device:chr_file { read write getattr ioctl };
+allow { appdomain -isolated_app -isolated_base_app -ephemeral_app } usbaccessory_device:chr_file { read write getattr };
 
 # For art.
 allow appdomain dalvikcache_data_file:file execute;
@@ -289,9 +291,9 @@ control_logd({ appdomain -ephemeral_app })
 # application inherit logd write socket (urge is to deprecate this long term)
 allow appdomain zygote:unix_dgram_socket write;
 
-allow { appdomain -isolated_app -ephemeral_app } keystore:keystore_key { get_state get insert delete exist list sign verify };
+allow { appdomain -isolated_app -isolated_base_app -ephemeral_app } keystore:keystore_key { get_state get insert delete exist list sign verify };
 
-use_keystore({ appdomain -isolated_app -ephemeral_app })
+use_keystore({ appdomain -isolated_app -isolated_base_app -ephemeral_app })
 
 use_credstore({ appdomain -isolated_app -ephemeral_app })
 
@@ -301,16 +303,16 @@ allow appdomain console_device:chr_file { read write };
 allowxperm { appdomain -bluetooth } self:{ rawip_socket tcp_socket udp_socket }
   ioctl { unpriv_sock_ioctls unpriv_tty_ioctls };
 
-allow { appdomain -isolated_app } ion_device:chr_file r_file_perms;
+allow { appdomain -isolated_app -isolated_base_app } ion_device:chr_file r_file_perms;
 
 # Allow AAudio apps to use shared memory file descriptors from the HAL
-allow { appdomain -isolated_app } hal_audio:fd use;
+allow { appdomain -isolated_app -isolated_base_app } hal_audio:fd use;
 
 # Allow app to access shared memory created by camera HAL1
-allow { appdomain -isolated_app } hal_camera:fd use;
+allow { appdomain -isolated_app -isolated_base_app } hal_camera:fd use;
 
 # RenderScript always-passthrough HAL
-allow { appdomain -isolated_app } hal_renderscript_hwservice:hwservice_manager find;
+allow { appdomain -isolated_app -isolated_base_app } hal_renderscript_hwservice:hwservice_manager find;
 allow appdomain same_process_hal_file:file { execute read open getattr map };
 
 # TODO: switch to meminfo service
@@ -319,12 +321,12 @@ allow appdomain proc_meminfo:file r_file_perms;
 # For app fuse.
 allow appdomain app_fuse_file:file { getattr read append write map };
 
-pdx_client({ appdomain -isolated_app -ephemeral_app }, display_client)
-pdx_client({ appdomain -isolated_app -ephemeral_app }, display_manager)
-pdx_client({ appdomain -isolated_app -ephemeral_app }, display_vsync)
-pdx_client({ appdomain -isolated_app -ephemeral_app }, performance_client)
+pdx_client({ appdomain -isolated_app -isolated_base_app -ephemeral_app }, display_client)
+pdx_client({ appdomain -isolated_app -isolated_base_app -ephemeral_app }, display_manager)
+pdx_client({ appdomain -isolated_app -isolated_base_app -ephemeral_app }, display_vsync)
+pdx_client({ appdomain -isolated_app -isolated_base_app -ephemeral_app }, performance_client)
 # Apps do not directly open the IPC socket for bufferhubd.
-pdx_use({ appdomain -isolated_app -ephemeral_app }, bufferhub_client)
+pdx_use({ appdomain -isolated_app -isolated_base_app -ephemeral_app }, bufferhub_client)
 
 ###
 ### CTS-specific rules
@@ -337,8 +339,8 @@ allow appdomain runas_exec:file getattr;
 
 # Apps receive an open tun fd from the framework for
 # device traffic. Do not allow untrusted app to directly open tun_device
-allow { appdomain -isolated_app -ephemeral_app } tun_device:chr_file { read write getattr append ioctl };
-allowxperm { appdomain -isolated_app -ephemeral_app } tun_device:chr_file ioctl TUNGETIFF;
+allow { appdomain -isolated_app -isolated_base_app -ephemeral_app } tun_device:chr_file { read write getattr append ioctl };
+allowxperm { appdomain -isolated_app -isolated_base_app -ephemeral_app } tun_device:chr_file ioctl TUNGETIFF;
 
 # Connect to adbd and use a socket transferred from it.
 # This is used for e.g. adb backup/restore.
@@ -383,7 +385,7 @@ neverallow appdomain {
 }:chr_file { read write };
 
 # Note: Try expanding list of app domains in the future.
-neverallow { untrusted_app isolated_app shell } graphics_device:chr_file { read write };
+neverallow { untrusted_app isolated_app isolated_base_app shell } graphics_device:chr_file { read write };
 
 neverallow { appdomain -nfc } nfc_device:chr_file
     { read write };
@@ -541,6 +543,7 @@ neverallow appdomain {
 neverallow {
   bluetooth
   isolated_app
+  isolated_base_app
   nfc
   radio
   shared_relro

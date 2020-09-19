@@ -94,6 +94,7 @@
     iorapd_exec
     iorapd_service
     iorapd_tmpfs
+    isolated_base_app
     last_boot_reason_prop
     llkd
     llkd_exec
@@ -169,6 +170,9 @@
     traceur_app
     traceur_app_tmpfs
     untrusted_app_all_devpts
+    untrusted_base_app
+    untrusted_base_app_25
+    untrusted_base_app_27
     update_engine_log_data_file
     uri_grants_service
     usbd
