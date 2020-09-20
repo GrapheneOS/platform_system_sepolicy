@@ -53,11 +53,6 @@ allow app_zygote zygote:process sigchld;
 r_dir_file(app_zygote, dalvikcache_data_file);
 allow app_zygote dalvikcache_data_file:file execute;
 
-# Allow reading/executing installed binaries to enable preloading
-# application data
-allow app_zygote apk_data_file:dir r_dir_perms;
-allow app_zygote apk_data_file:file { r_file_perms execute };
-
 # /oem accesses.
 allow app_zygote oemfs:dir search;
 

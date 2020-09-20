@@ -10,11 +10,6 @@ typeattribute webview_zygote mlstrustedsubject;
 # a domain macro.
 tmpfs_domain(webview_zygote);
 
-# Allow reading/executing installed binaries to enable preloading the
-# installed WebView implementation.
-allow webview_zygote apk_data_file:dir r_dir_perms;
-allow webview_zygote apk_data_file:file { r_file_perms execute };
-
 # Access to the WebView relro file.
 allow webview_zygote shared_relro_file:dir search;
 allow webview_zygote shared_relro_file:file r_file_perms;
