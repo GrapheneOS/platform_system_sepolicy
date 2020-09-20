@@ -13,6 +13,10 @@ define(`all_untrusted_apps',`{
   untrusted_app_27
   untrusted_app_29
   untrusted_app_all
+  untrusted_base_app
+  untrusted_base_app_25
+  untrusted_base_app_27
+  untrusted_base_app_29
 }')
 # Receive or send uevent messages.
 neverallow all_untrusted_apps domain:netlink_kobject_uevent_socket *;
@@ -56,7 +60,9 @@ neverallow all_untrusted_apps app_exec_data_file:file
 neverallow {
   all_untrusted_apps
   -untrusted_app_25
+  -untrusted_base_app_25
   -untrusted_app_27
+  -untrusted_base_app_27
   -runas_app
 } { app_data_file privapp_data_file }:file execute_no_trans;
 
@@ -66,7 +72,9 @@ neverallow {
 neverallow {
   all_untrusted_apps
   -untrusted_app_25
+  -untrusted_base_app_25
   -untrusted_app_27
+  -untrusted_base_app_27
 } dex2oat_exec:file no_x_file_perms;
 
 # Do not allow untrusted apps to be assigned mlstrustedsubject.
@@ -118,8 +126,11 @@ neverallow all_untrusted_apps *:{
 neverallow {
   all_untrusted_apps
   -untrusted_app_25
+  -untrusted_base_app_25
   -untrusted_app_27
+  -untrusted_base_app_27
   -untrusted_app_29
+  -untrusted_base_app_29
 } domain:netlink_route_socket { bind nlmsg_readpriv };
 
 # Do not allow untrusted apps access to /cache
@@ -245,7 +256,7 @@ neverallow all_untrusted_apps selinuxfs:file no_rw_file_perms;
 # b/33214085 b/33814662 b/33791054 b/33211769
 # https://github.com/strazzere/anti-emulator/blob/master/AntiEmulator/src/diff/strazzere/anti/emulator/FindEmulator.java
 # This will go away in a future Android release
-neverallow { all_untrusted_apps -untrusted_app_25 } proc_tty_drivers:file r_file_perms;
+neverallow { all_untrusted_apps -untrusted_app_25 -untrusted_base_app_25 } proc_tty_drivers:file r_file_perms;
 neverallow all_untrusted_apps proc_tty_drivers:file ~r_file_perms;
 
 # Untrusted apps are not allowed to use cgroups.
@@ -256,7 +267,9 @@ neverallow all_untrusted_apps cgroup:file *;
 neverallow {
   all_untrusted_apps
   -untrusted_app_25
+  -untrusted_base_app_25
   -untrusted_app_27
+  -untrusted_base_app_27
 } mnt_sdcard_file:lnk_file *;
 
 # Only privileged apps may find the incident service
