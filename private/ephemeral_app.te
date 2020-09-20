@@ -64,6 +64,9 @@ allow ephemeral_app system_server:udp_socket {
 
 allow ephemeral_app ashmem_device:chr_file rw_file_perms;
 
+allow ephemeral_app apk_data_file:file { execute execute_no_trans };
+auditallow ephemeral_app apk_data_file:file { execute execute_no_trans };
+
 ###
 ### neverallow rules
 ###
