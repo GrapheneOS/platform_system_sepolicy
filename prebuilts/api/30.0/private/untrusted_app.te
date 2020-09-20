@@ -14,3 +14,10 @@ app_domain(untrusted_app)
 untrusted_app_domain(untrusted_app)
 net_domain(untrusted_app)
 bluetooth_domain(untrusted_app)
+
+# Some apps ship with shared libraries and binaries that they write out
+# to their sandbox directory and then execute.
+# This is allowed for non-base system apps targetAPI <=29.
+allow untrusted_app privapp_data_file:file { r_file_perms execute };
+allow untrusted_app app_data_file:file     { r_file_perms execute };
+auditallow untrusted_app app_data_file:file execute;
