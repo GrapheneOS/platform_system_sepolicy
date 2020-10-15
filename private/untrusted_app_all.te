@@ -50,9 +50,6 @@ allow untrusted_app_all trace_data_file:file { getattr read };
 neverallow untrusted_app_all trace_data_file:dir *;
 neverallow untrusted_app_all trace_data_file:file { no_w_file_perms open };
 
-# Allow to read staged apks.
-allow untrusted_app_all { apk_tmp_file apk_private_tmp_file }:file {read getattr};
-
 # Read and write system app data files passed over Binder.
 # Motivating case was /data/data/com.android.settings/cache/*.jpg for
 # cropping or taking user photos.
