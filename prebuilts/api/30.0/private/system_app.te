@@ -6,7 +6,7 @@
 
 typeattribute system_app coredomain;
 
-app_domain(system_app)
+hardened_app_domain(system_app)
 net_domain(system_app)
 binder_service(system_app)
 

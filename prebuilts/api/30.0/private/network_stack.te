@@ -1,7 +1,7 @@
 # Networking service app
 typeattribute network_stack coredomain;
 
-app_domain(network_stack);
+hardened_app_domain(network_stack);
 net_domain(network_stack);
 
 allow network_stack self:global_capability_class_set {

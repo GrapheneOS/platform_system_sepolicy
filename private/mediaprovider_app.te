@@ -3,7 +3,7 @@
 ###
 type mediaprovider_app, domain, coredomain;
 
-app_domain(mediaprovider_app)
+hardened_app_domain(mediaprovider_app)
 
 # Access to /mnt/pass_through.
 allow mediaprovider_app mnt_pass_through_file:dir r_dir_perms;

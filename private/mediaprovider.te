@@ -4,7 +4,7 @@
 ###
 
 typeattribute mediaprovider coredomain;
-app_domain(mediaprovider)
+hardened_app_domain(mediaprovider)
 
 # DownloadProvider accesses the network.
 net_domain(mediaprovider)

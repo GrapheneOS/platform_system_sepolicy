@@ -3,7 +3,7 @@
 ###
 
 typeattribute priv_app coredomain;
-app_domain(priv_app)
+hardened_app_domain(priv_app)
 
 # Access the network.
 net_domain(priv_app)

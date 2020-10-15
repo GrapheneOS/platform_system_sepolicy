@@ -2,7 +2,7 @@
 
 typeattribute bluetooth coredomain;
 
-app_domain(bluetooth)
+hardened_app_domain(bluetooth)
 net_domain(bluetooth)
 
 # Socket creation under /data/misc/bluedroid.

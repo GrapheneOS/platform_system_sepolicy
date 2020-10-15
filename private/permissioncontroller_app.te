@@ -3,7 +3,7 @@
 ###
 type permissioncontroller_app, domain, coredomain;
 
-app_domain(permissioncontroller_app)
+hardened_app_domain(permissioncontroller_app)
 
 # Allow interaction with gpuservice
 binder_call(permissioncontroller_app, gpuservice)

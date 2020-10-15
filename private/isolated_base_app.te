@@ -8,7 +8,7 @@
 
 typeattribute isolated_base_app coredomain;
 
-app_domain(isolated_base_app)
+hardened_app_domain(isolated_base_app)
 
 # Access already open app data files received over Binder or local socket IPC.
 allow isolated_base_app { app_data_file privapp_data_file }:file { append read write getattr lock map };

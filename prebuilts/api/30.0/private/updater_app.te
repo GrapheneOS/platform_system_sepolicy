@@ -4,7 +4,7 @@
 
 typeattribute updater_app coredomain;
 
-app_domain(updater_app)
+hardened_app_domain(updater_app)
 untrusted_app_domain(updater_app)
 net_domain(updater_app)
 
