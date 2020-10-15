@@ -41,13 +41,6 @@ allow untrusted_app_all asec_apk_file:dir r_dir_perms;
 # Execute libs in asec containers.
 allow untrusted_app_all asec_public_file:file { execute };
 
-# Used by Finsky / Android "Verify Apps" functionality when
-# running "adb install foo.apk".
-# TODO: Long term, we don't want apps probing into shell data files.
-# Figure out a way to remove these rules.
-allow untrusted_app_all shell_data_file:file r_file_perms;
-allow untrusted_app_all shell_data_file:dir r_dir_perms;
-
 # Allow traceur to pass file descriptors through a content provider to untrusted apps
 # for the purpose of sharing files through e.g. gmail
 allow untrusted_app_all trace_data_file:file { getattr read };
