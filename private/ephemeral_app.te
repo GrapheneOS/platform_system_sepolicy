@@ -70,6 +70,9 @@ allow ephemeral_app ashmem_device:chr_file rw_file_perms;
 allow ephemeral_app { ashmem_device ashmem_libcutils_device }:chr_file execute;
 auditallow ephemeral_app { ashmem_device ashmem_libcutils_device }:chr_file execute;
 
+allow ephemeral_app appdomain_tmpfs:file execute;
+auditallow ephemeral_app appdomain_tmpfs:file execute;
+
 ###
 ### neverallow rules
 ###
