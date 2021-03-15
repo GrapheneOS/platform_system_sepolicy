@@ -28,6 +28,9 @@ auditallow untrusted_app app_data_file:file execute;
 allow untrusted_app { ashmem_device ashmem_libcutils_device }:chr_file execute;
 auditallow untrusted_app { ashmem_device ashmem_libcutils_device }:chr_file execute;
 
+allow untrusted_app appdomain_tmpfs:file execute;
+auditallow untrusted_app appdomain_tmpfs:file execute;
+
 # Allow webview to access fd shared by sdksandbox for experiments data
 # TODO(b/229249719): Will not be supported in Android U
 allow untrusted_app sdk_sandbox_data_file:fd use;
