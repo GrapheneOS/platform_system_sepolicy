@@ -28,6 +28,9 @@ auditallow untrusted_app_29 app_data_file:file execute;
 allow untrusted_app_29 { ashmem_device ashmem_libcutils_device }:chr_file execute;
 auditallow untrusted_app_29 { ashmem_device ashmem_libcutils_device }:chr_file execute;
 
+allow untrusted_app_29 appdomain_tmpfs:file execute;
+auditallow untrusted_app_29 appdomain_tmpfs:file execute;
+
 # allow sending RTM_GETNEIGH{TBL} messages.
 allow untrusted_app_29 self:netlink_route_socket nlmsg_getneigh;
 auditallow untrusted_app_29 self:netlink_route_socket nlmsg_getneigh;
