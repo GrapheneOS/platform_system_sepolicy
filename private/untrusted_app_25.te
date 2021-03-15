@@ -68,3 +68,6 @@ get_prop({ untrusted_app_25 userdebug_or_eng(`-untrusted_app_25') }, userdebug_o
 
 allow untrusted_app_25 { ashmem_device ashmem_libcutils_device }:chr_file execute;
 auditallow untrusted_app_25 { ashmem_device ashmem_libcutils_device }:chr_file execute;
+
+allow untrusted_app_25 appdomain_tmpfs:file execute;
+auditallow untrusted_app_25 appdomain_tmpfs:file execute;
