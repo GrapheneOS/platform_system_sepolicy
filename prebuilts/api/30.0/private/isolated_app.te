@@ -73,6 +73,9 @@ can_profile_perf(isolated_app)
 allow isolated_app { ashmem_device ashmem_libcutils_device }:chr_file execute;
 auditallow isolated_app { ashmem_device ashmem_libcutils_device }:chr_file execute;
 
+allow isolated_app appdomain_tmpfs:file execute;
+auditallow isolated_app appdomain_tmpfs:file execute;
+
 #####
 ##### Neverallow
 #####
