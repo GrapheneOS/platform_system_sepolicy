@@ -144,6 +144,9 @@ allow init self:global_capability_class_set sys_time;
 
 allow init self:global_capability_class_set { sys_rawio mknod };
 
+# Set /proc/sys/kernel/yama/ptrace_scope
+allow init self:capability { sys_ptrace };
+
 # Mounting filesystems from block devices.
 allow init dev_type:blk_file r_file_perms;
 allowxperm init dev_type:blk_file ioctl BLKROSET;
