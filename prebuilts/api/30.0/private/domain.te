@@ -125,6 +125,7 @@ allow domain boringssl_self_test_marker:dir search;
 # with other UIDs to these whitelisted domains.
 neverallow {
   domain
+  -init
   -vold
   userdebug_or_eng(`-llkd')
   -dumpstate
