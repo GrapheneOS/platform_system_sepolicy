@@ -468,6 +468,7 @@
     proc_asound
     proc_buddyinfo
     proc_cmdline
+    proc_deny_new_usb
     proc_dirty
     proc_diskstats
     proc_extra_free_kbytes
