@@ -31,3 +31,5 @@ allow kernel snapuserd_exec:file relabelto;
 
 allow kernel kmsg_device:chr_file write;
 allow kernel gsid:fd use;
+
+allow kernel tmpfs:lnk_file r_file_perms;
