@@ -172,8 +172,6 @@ user=_app seinfo=media isPrivApp=true name=com.android.providers.media.module do
 user=_app seinfo=base isPrivApp=true name=com.google.android.providers.media.module domain=mediaprovider_app type=privapp_data_file levelFrom=all
 user=_app isPrivApp=true name=com.google.android.providers.media.module domain=mediaprovider_app type=privapp_data_file levelFrom=all
 user=_app seinfo=platform isPrivApp=true name=com.android.permissioncontroller domain=permissioncontroller_app type=privapp_data_file levelFrom=all
-user=_app seinfo=base isPrivApp=true name=com.android.vzwomatrigger domain=vzwomatrigger_app type=privapp_data_file levelFrom=all
-user=_app isPrivApp=true name=com.android.vzwomatrigger domain=vzwomatrigger_app type=privapp_data_file levelFrom=all
 user=_app seinfo=base isPrivApp=true name=app.seamlessupdate.client domain=updater_app type=app_data_file levelFrom=user
 user=_app isPrivApp=true name=app.seamlessupdate.client domain=updater_app type=app_data_file levelFrom=user
 user=_app seinfo=base minTargetSdkVersion=32 domain=untrusted_base_app type=app_data_file levelFrom=all
