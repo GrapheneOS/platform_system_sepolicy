@@ -56,3 +56,7 @@ auditallow untrusted_app_25 self:netlink_route_socket nlmsg_getneigh;
 # disabling apk_data_file exectute
 allow untrusted_app_25 apk_data_file:file { execute execute_no_trans };
 auditallow untrusted_app_25 apk_data_file:file { execute execute_no_trans };
+
+# disabling tmpfs exectute
+allow untrusted_app_25 appdomain_tmpfs:file execute;
+auditallow untrusted_app_25 appdomain_tmpfs:file execute;
