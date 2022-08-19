@@ -17,9 +17,6 @@ allow app_zygote self:global_capability_class_set setpcap;
 allow app_zygote self:process setcurrent;
 allow app_zygote isolated_app:process dyntransition;
 
-# For JIT
-allow app_zygote self:process execmem;
-
 # Allow app_zygote to stat the files that it opens. It must
 # be able to inspect them so that it can reopen them on fork
 # if necessary: b/30963384.
