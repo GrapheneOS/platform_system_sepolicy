@@ -21,3 +21,7 @@ allow untrusted_app sdk_sandbox_data_file:fd use;
 allow untrusted_app sdk_sandbox_data_file:file write;
 
 neverallow untrusted_app sdk_sandbox_data_file:file { open create };
+
+# Disabling apk_data_file exectute
+allow untrusted_app apk_data_file:file { execute execute_no_trans };
+auditallow untrusted_app apk_data_file:file { execute execute_no_trans };
