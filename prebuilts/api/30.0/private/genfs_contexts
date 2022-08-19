@@ -42,6 +42,7 @@ genfscon proc /sys/fs/suid_dumpable u:object_r:proc_security:s0
 genfscon proc /sys/fs/verity/require_signatures u:object_r:proc_fs_verity:s0
 genfscon proc /sys/kernel/core_pattern u:object_r:usermodehelper:s0
 genfscon proc /sys/kernel/core_pipe_limit u:object_r:usermodehelper:s0
+genfscon proc /sys/kernel/deny_new_usb u:object_r:proc_deny_new_usb:s0
 genfscon proc /sys/kernel/domainname u:object_r:proc_hostname:s0
 genfscon proc /sys/kernel/dmesg_restrict u:object_r:proc_security:s0
 genfscon proc /sys/kernel/hostname u:object_r:proc_hostname:s0
