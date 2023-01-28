@@ -203,8 +203,6 @@ userdebug_or_eng(`
   allow shell appdomain_tmpfs:file { open execute_no_trans };
 ')
 
-allow shell apk_data_file:file { execute execute_no_trans };
-
 # Allow shell to write db.log.detailed, db.log.slow_query_threshold*
 set_prop(shell, sqlite_log_prop)
 
