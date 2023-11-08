@@ -232,13 +232,13 @@ neverallow {
   domain
   -init
   -system_server
-  userdebug_or_eng(`-dumpstate')
+  -dumpstate
 } dropbox_data_file:dir *;
 neverallow {
   domain
   -init
   -system_server
-  userdebug_or_eng(`-dumpstate')
+  -dumpstate
 } dropbox_data_file:file ~{ getattr read };
 
 ###
