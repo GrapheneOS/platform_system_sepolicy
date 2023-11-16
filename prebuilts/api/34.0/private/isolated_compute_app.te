@@ -14,10 +14,6 @@ typeattribute isolated_compute_app coredomain;
 app_domain(isolated_compute_app)
 isolated_app_domain(isolated_compute_app)
 
-# WebView and other application-specific JIT compilers
-allow isolated_compute_app self:process execmem;
-auditallow isolated_compute_app self:process execmem;
-
 allow isolated_compute_app isolated_compute_allowed_service:service_manager find;
 allow isolated_compute_app isolated_compute_allowed_device:chr_file { read write ioctl map };
 

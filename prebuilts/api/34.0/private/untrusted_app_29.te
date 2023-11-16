@@ -15,10 +15,6 @@ untrusted_app_domain(untrusted_app_29)
 net_domain(untrusted_app_29)
 bluetooth_domain(untrusted_app_29)
 
-# WebView and other application-specific JIT compilers
-allow untrusted_app_29 self:process execmem;
-auditallow untrusted_app_29 self:process execmem;
-
 # allow sending RTM_GETNEIGH{TBL} messages.
 allow untrusted_app_29 self:netlink_route_socket nlmsg_getneigh;
 auditallow untrusted_app_29 self:netlink_route_socket nlmsg_getneigh;
