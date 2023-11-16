@@ -9,7 +9,6 @@ type simpleperf_exec, system_file_type, exec_type, file_type;
 define(`simpleperf_profileable_apps', `{
   ephemeral_app
   isolated_app
-  isolated_base_app
   platform_app
   priv_app
   untrusted_app_all
