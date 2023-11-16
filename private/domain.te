@@ -203,7 +203,6 @@ neverallow {
 # with other UIDs to these allowlisted domains.
 neverallow {
   domain
-  -init
   -vold
   userdebug_or_eng(`-llkd')
   -dumpstate
