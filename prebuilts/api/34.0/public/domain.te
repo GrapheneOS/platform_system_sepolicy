@@ -92,7 +92,7 @@ allow domain binderfs_logs_proc:dir search;
 allow domain binderfs_features:dir search;
 allow domain binderfs_features:file r_file_perms;
 
-allow { domain -servicemanager -vndservicemanager -isolated_app -isolated_base_app } hwbinder_device:chr_file rw_file_perms;
+allow { domain -servicemanager -vndservicemanager -isolated_app } hwbinder_device:chr_file rw_file_perms;
 allow domain ptmx_device:chr_file rw_file_perms;
 allow domain random_device:chr_file rw_file_perms;
 allow domain proc_random:dir r_dir_perms;
