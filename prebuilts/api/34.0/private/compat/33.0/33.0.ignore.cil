@@ -45,8 +45,6 @@
     hal_wifi_service
     healthconnect_service
     hypervisor_restricted_prop
-    isolated_base_app
-    isolated_base_compute_app
     isolated_compute_app
     keystore_config_prop
     ntfs

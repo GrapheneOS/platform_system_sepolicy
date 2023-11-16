@@ -56,8 +56,6 @@
     hal_vehicle_service
     hal_wifi_hostapd_service
     hal_wifi_supplicant_service
-    isolated_base_app
-    isolated_base_compute_app
     locale_service
     mdns_service
     nearby_service
