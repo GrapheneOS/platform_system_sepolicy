@@ -13,12 +13,6 @@ allow runas_app app_data_file:file execute_no_trans;
 # Allow lldb/ndk-gdb/simpleperf to read maps of debuggable app processes.
 r_dir_file(runas_app, untrusted_app_all)
 
-# Some apps ship with shared libraries and binaries that they write out
-# to their sandbox directory and then execute.
-allow runas_app privapp_data_file:file { r_file_perms execute };
-allow runas_app app_data_file:file     { r_file_perms execute };
-auditallow runas_app app_data_file:file execute;
-
 # Allow lldb/ndk-gdb/simpleperf to ptrace attach to debuggable app processes.
 allow runas_app untrusted_app_all:process { ptrace sigkill signal sigstop };
 allow runas_app untrusted_app_all:unix_stream_socket connectto;
