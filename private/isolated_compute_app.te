@@ -18,9 +18,6 @@ isolated_app_domain(isolated_compute_app)
 allow isolated_compute_app self:process execmem;
 auditallow isolated_compute_app self:process execmem;
 
-allow isolated_compute_app { ashmem_device ashmem_libcutils_device }:chr_file execute;
-auditallow isolated_compute_app { ashmem_device ashmem_libcutils_device }:chr_file execute;
-
 allow isolated_compute_app isolated_compute_allowed_service:service_manager find;
 allow isolated_compute_app isolated_compute_allowed_device:chr_file { read write ioctl map };
 
