@@ -25,9 +25,6 @@ allow untrusted_app_27 privapp_data_file:file { r_file_perms execute };
 allow untrusted_app_27 app_data_file:file     { r_file_perms execute };
 auditallow untrusted_app_27 app_data_file:file execute;
 
-allow untrusted_app_27 { ashmem_device ashmem_libcutils_device }:chr_file execute;
-auditallow untrusted_app_27 { ashmem_device ashmem_libcutils_device }:chr_file execute;
-
 # Text relocation support for API < 23. This is now disallowed for targetSdkVersion>=Q.
 # https://android.googlesource.com/platform/bionic/+/master/android-changes-for-ndk-developers.md#text-relocations-enforced-for-api-level-23
 allow untrusted_app_27 { apk_data_file app_data_file asec_public_file }:file execmod;

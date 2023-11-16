@@ -20,9 +20,6 @@ app_domain(ephemeral_app)
 allow ephemeral_app self:process execmem;
 auditallow ephemeral_app self:process execmem;
 
-allow ephemeral_app { ashmem_device ashmem_libcutils_device }:chr_file execute;
-auditallow ephemeral_app { ashmem_device ashmem_libcutils_device }:chr_file execute;
-
 # Allow ephemeral apps to read/write files in visible storage if provided fds
 allow ephemeral_app { sdcard_type fuse media_rw_data_file }:file {read write getattr ioctl lock append};
 
