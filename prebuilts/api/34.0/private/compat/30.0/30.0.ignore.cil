@@ -139,12 +139,6 @@
     task_profiles_api_file
     texttospeech_service
     translation_service
-    untrusted_base_app
-    untrusted_base_app_25
-    untrusted_base_app_27
-    untrusted_base_app_29
-    untrusted_base_app_30
-    untrusted_base_app_32
     updater_app
     update_engine_stable_service
     userdata_sysdev

@@ -14,11 +14,6 @@ define(`all_untrusted_apps',`{
   untrusted_app_27
   untrusted_app_29
   untrusted_app_30
-  untrusted_base_app
-  untrusted_base_app_25
-  untrusted_base_app_27
-  untrusted_base_app_29
-  untrusted_base_app_30
   untrusted_app_all
 }')
 # Receive or send uevent messages.
@@ -70,8 +65,6 @@ neverallow {
   all_untrusted_apps
   -untrusted_app_25
   -untrusted_app_27
-  -untrusted_base_app_25
-  -untrusted_base_app_27
   -runas_app
 } { app_data_file privapp_data_file }:file execute_no_trans;
 
@@ -82,8 +75,6 @@ neverallow {
   all_untrusted_apps
   -untrusted_app_25
   -untrusted_app_27
-  -untrusted_base_app_25
-  -untrusted_base_app_27
 } dex2oat_exec:file no_x_file_perms;
 
 # Do not allow untrusted apps to be assigned mlstrustedsubject.
@@ -147,10 +138,6 @@ neverallow {
   -untrusted_app_27
   -untrusted_app_29
   -untrusted_app_30
-  -untrusted_base_app_25
-  -untrusted_base_app_27
-  -untrusted_base_app_29
-  -untrusted_base_app_30
 } domain:netlink_route_socket nlmsg_getneigh;
 
 # Do not allow untrusted apps access to /cache
@@ -253,7 +240,7 @@ neverallow all_untrusted_apps selinuxfs:file no_rw_file_perms;
 # b/33214085 b/33814662 b/33791054 b/33211769
 # https://github.com/strazzere/anti-emulator/blob/master/AntiEmulator/src/diff/strazzere/anti/emulator/FindEmulator.java
 # This will go away in a future Android release
-neverallow { all_untrusted_apps -untrusted_app_25 -untrusted_base_app_25 } proc_tty_drivers:file r_file_perms;
+neverallow { all_untrusted_apps -untrusted_app_25 } proc_tty_drivers:file r_file_perms;
 neverallow all_untrusted_apps proc_tty_drivers:file ~r_file_perms;
 
 # Untrusted apps are not allowed to use cgroups.
@@ -266,8 +253,6 @@ neverallow {
   all_untrusted_apps
   -untrusted_app_25
   -untrusted_app_27
-  -untrusted_base_app_25
-  -untrusted_base_app_27
 } mnt_sdcard_file:lnk_file *;
 
 # Only privileged apps may find the incident service
@@ -295,11 +280,6 @@ neverallow {
   -untrusted_app_29
   -untrusted_app_30
   -untrusted_app_32
-  -untrusted_base_app_25
-  -untrusted_base_app_27
-  -untrusted_base_app_29
-  -untrusted_base_app_30
-  -untrusted_base_app_32
 } mdnsd_socket:sock_file write;
 neverallow {
   all_untrusted_apps
@@ -308,11 +288,6 @@ neverallow {
   -untrusted_app_29
   -untrusted_app_30
   -untrusted_app_32
-  -untrusted_base_app_25
-  -untrusted_base_app_27
-  -untrusted_base_app_29
-  -untrusted_base_app_30
-  -untrusted_base_app_32
 } mdnsd:unix_stream_socket connectto;
 
 # Do not allow untrusted apps to use anonymous inodes. At the moment,
