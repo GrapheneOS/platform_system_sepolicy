@@ -59,6 +59,9 @@ set_prop(init, powerctl_prop)
 
 set_prop(init, userspace_reboot_exported_prop)
 
+# CLOCK_BOOTTIME_ALARM is used by the auto-reboot feature
+allow init self:global_capability2_class_set wake_alarm;
+
 # Second-stage init performs a test for whether the kernel has SELinux hooks
 # for the perf_event_open() syscall. This is done by testing for the syscall
 # outcomes corresponding to this policy.
