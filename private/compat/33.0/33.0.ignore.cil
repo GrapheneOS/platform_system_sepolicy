@@ -79,6 +79,7 @@
     ublk_block_device
     ublk_control_device
     updater_app
+    security_usb_mode_prop
     usb_uvc_enabled_prop
     virtual_face_hal_prop
     virtual_fingerprint_hal_prop

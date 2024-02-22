@@ -803,6 +803,8 @@ persist.sys.device_provisioned u:object_r:provisioned_prop:s0 exact string
 
 persist.sys.theme               u:object_r:theme_prop:s0 exact string
 
+persist.security.usb_mode u:object_r:security_usb_mode_prop:s0 exact int
+
 sys.retaildemo.enabled u:object_r:retaildemo_prop:s0 exact int
 
 sys.user.0.ce_available u:object_r:exported3_system_prop:s0 exact bool
