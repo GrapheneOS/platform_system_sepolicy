@@ -19,3 +19,5 @@ allow hal_usb sysfs:file open;
 allow hal_usb sysfs:file write;
 allow hal_usb sysfs:file getattr;
 
+get_prop(hal_usb, security_usb_mode_prop)
+

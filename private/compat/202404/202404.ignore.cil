@@ -27,6 +27,7 @@
     profcollectd_etr_prop
     ranging_service
     supervision_service
+    security_usb_mode_prop
     sysfs_cma
     sysfs_firmware_acpi_tables
     tee_service_contexts_file
