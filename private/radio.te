@@ -17,6 +17,8 @@ set_prop(radio, ctl_rildaemon_prop)
 # Telephony code contains time / time zone detection logic so it reads the associated properties.
 get_prop(radio, time_prop)
 
+allow radio mediametrics_service:service_manager find;
+
 # allow telephony to access platform compat to log permission denials
 allow radio platform_compat_service:service_manager find;
 
