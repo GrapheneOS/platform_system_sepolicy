@@ -14,6 +14,7 @@
     early_virtmgr
     early_virtmgr_exec
     enable_16k_pages_prop
+    erase_secure_element_prop
     forensic_service
     fstype_prop
     fwk_vold_service
