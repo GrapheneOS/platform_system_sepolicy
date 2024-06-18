@@ -155,6 +155,8 @@ type prng_seeder_socket, file_type, coredomain_socket, mlstrustedobject;
 type sysfs_dt_avf, fs_type, sysfs_type;
 type proc_dt_avf, fs_type, proc_type;
 
+type proc_deny_new_usb2, fs_type, proc_type;
+
 # Type for /system/fonts/font_fallback.xm
 type system_font_fallback_file, system_file_type, file_type;
 

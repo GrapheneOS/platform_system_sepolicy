@@ -10,6 +10,7 @@
     binderfs_logs_transactions
     bluetooth_finder_prop
     crosvm
+    deny_new_usb2_prop
     drm_config_prop
     early_virtmgr
     early_virtmgr_exec
