@@ -197,8 +197,8 @@ neverallow all_untrusted_apps tun_device:chr_file open;
 neverallowxperm all_untrusted_apps tun_device:chr_file ioctl ~{ FIOCLEX FIONCLEX TUNGETIFF };
 
 # Only allow appending to /data/anr/traces.txt (b/27853304, b/18340553)
-neverallow all_untrusted_apps anr_data_file:file ~{ open append };
-neverallow all_untrusted_apps anr_data_file:dir ~search;
+neverallow { all_untrusted_apps -logviewer_app } anr_data_file:file ~{ open append };
+neverallow { all_untrusted_apps -logviewer_app } anr_data_file:dir ~search;
 
 # Avoid reads from generically labeled /proc files
 # Create a more specific label if needed

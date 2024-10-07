@@ -803,7 +803,7 @@ neverallow { appdomain -mediaprovider_app } storage_config_prop:file no_rw_file_
 dontaudit appdomain system_font_fallback_file:file no_rw_file_perms;
 neverallow appdomain system_font_fallback_file:file no_rw_file_perms;
 
-neverallow { appdomain -shell } tombstone_data_file:file ~{ getattr read };
+neverallow { appdomain -shell -logviewer_app } tombstone_data_file:file ~{ getattr read };
 is_flag_enabled(RELEASE_UNLOCKED_STORAGE_API, `
   # Files and directories that apps write to their storage areas
   # should have type storage_area_content_file

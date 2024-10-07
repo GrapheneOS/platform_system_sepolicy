@@ -1,0 +1,14 @@
+type logviewer_app, domain;
+typeattribute logviewer_app coredomain;
+
+app_domain(logviewer_app)
+untrusted_app_domain(logviewer_app)
+
+# LogViewer checks whether the bootloader is unlocked
+allow logviewer_app oem_lock_service:service_manager find;
+
+# LogViewer shows ANRs and tombstones
+allow logviewer_app anr_data_file:dir r_dir_perms;
+allow logviewer_app anr_data_file:file r_file_perms;
+allow logviewer_app tombstone_data_file:dir r_dir_perms;
+allow logviewer_app tombstone_data_file:file r_file_perms;
