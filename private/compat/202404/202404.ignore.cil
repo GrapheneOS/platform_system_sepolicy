@@ -6,6 +6,7 @@
 (typeattributeset new_objects
   ( new_objects
     erase_secure_element_prop
+    port_security_mode_prop
     app_function_service
     binderfs_logs_transaction_history
     binderfs_logs_transactions

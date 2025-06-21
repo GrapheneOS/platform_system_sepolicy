@@ -1717,6 +1717,7 @@ composd.vm.art.memory_mib.config u:object_r:composd_vm_art_prop:s0 exact uint
 composd.vm.vendor.memory_mib.config u:object_r:composd_vm_vendor_prop:s0 exact int
 
 sys.erase_secure_element    u:object_r:erase_secure_element_prop:s0 exact string
+sys.port_security_mode u:object_r:port_security_mode_prop:s0 exact string
 
 sys.state_of_default_display u:object_r:exported_system_prop:s0 exact string
 persist.sys.alt_touch_mode u:object_r:exported_system_prop:s0 exact string
