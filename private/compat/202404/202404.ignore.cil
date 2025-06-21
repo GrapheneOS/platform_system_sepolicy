@@ -7,7 +7,6 @@
   ( new_objects
     security_usb_mode_prop
     erase_secure_element_prop
-    deny_new_usb2_prop
     app_function_service
     binderfs_logs_transaction_history
     binderfs_logs_transactions
