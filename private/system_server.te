@@ -935,7 +935,7 @@ get_prop(system_server, system_service_enable_prop)
 # Allow system server to read shared mmd properties
 get_prop(system_server, mmd_shared_prop)
 
-get_prop(system_server, security_usb_mode_prop)
+set_prop(system_server, security_usb_mode_prop)
 set_prop(system_server, deny_new_usb2_prop)
 
 # Create a socket for connections from debuggerd.
