@@ -2147,7 +2147,6 @@ neverallow {
   -init
   -otapreopt_chroot
   userdebug_or_eng(`-overlay_remounter')
-  userdebug_or_eng(`-zygote')
 } {
   system_file_type
   vendor_file_type

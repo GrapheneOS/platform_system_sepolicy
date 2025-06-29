@@ -81,9 +81,7 @@ allow zygote {
 }:dir { mounton search };
 
 # Legacy app compat
-userdebug_or_eng(`
-    allow zygote system_file:dir { mounton };
-')
+allow zygote system_file:dir { mounton };
 
 # Traverse /data_mirror to get to the above directories while their normal paths
 # are hidden, in order to bind-mount allowlisted per-app directories.
