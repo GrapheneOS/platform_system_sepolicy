@@ -24,6 +24,9 @@ type mediadrm_system_data_file, file_type, data_file_type, core_data_file_type;
 # /data/misc/storaged
 type storaged_data_file, file_type, data_file_type, core_data_file_type;
 
+# /data/system/microphone_scopes microphone scopes audio files
+type microphone_scopes_data_file, file_type, data_file_type, core_data_file_type;
+
 # /data/misc/wmtrace for wm traces
 type wm_trace_data_file, file_type, data_file_type, core_data_file_type, mlstrustedobject;
 

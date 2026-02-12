@@ -662,6 +662,13 @@ allow system_server dropbox_data_file:file create_file_perms;
 allow system_server heapdump_data_file:dir rw_dir_perms;
 allow system_server heapdump_data_file:file create_file_perms;
 
+# Manage /data/system/microphone_scopes (symlinks to raw user storage)
+allow system_server microphone_scopes_data_file:dir create_dir_perms;
+allow system_server microphone_scopes_data_file:lnk_file { create unlink getattr read };
+# Allow relabeling for restorecon
+allow system_server microphone_scopes_data_file:dir relabelto;
+allow system_server microphone_scopes_data_file:lnk_file relabelto;
+
 # Manage /data/misc/adb.
 allow system_server adb_keys_file:dir create_dir_perms;
 allow system_server adb_keys_file:file create_file_perms;

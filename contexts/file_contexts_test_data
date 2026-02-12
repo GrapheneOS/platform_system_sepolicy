@@ -1116,6 +1116,8 @@
 /data/system/dropbox/test                                         dropbox_data_file
 /data/system/heapdump                                             heapdump_data_file
 /data/system/heapdump/test                                        heapdump_data_file
+/data/system/microphone_scopes                                    microphone_scopes_data_file
+/data/system/microphone_scopes/test                               microphone_scopes_data_file
 /data/misc/trace                                                  method_trace_data_file
 /data/misc/trace/test                                             method_trace_data_file
 /data/misc/wmtrace                                                wm_trace_data_file

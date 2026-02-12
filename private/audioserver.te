@@ -55,6 +55,15 @@ set_prop(audioserver, exported_bluetooth_prop)
 allow audioserver audio_data_file:dir ra_dir_perms;
 allow audioserver audio_data_file:file create_file_perms;
 
+# Allow reading microphone scopes audio files (symlinks to raw user storage)
+allow audioserver microphone_scopes_data_file:dir r_dir_perms;
+allow audioserver microphone_scopes_data_file:lnk_file r_file_perms;
+# Symlinks point to /data/media/N/ (raw storage, not FUSE)
+allow audioserver media_rw_data_file:dir r_dir_perms;
+allow audioserver media_rw_data_file:file r_file_perms;
+# Allow audioserver to use media extractor for decoding microphone scopes audio
+allow audioserver mediaextractor_service:service_manager find;
+
 # allow access to ALSA MMAP FDs for AAudio API
 allow audioserver audio_device:chr_file { read write };
 
