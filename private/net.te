@@ -20,6 +20,14 @@ allow {
   -untrusted_app_all
 } self:netlink_route_socket { bind nlmsg_readpriv nlmsg_getneigh };
 
+allow {
+  netdomain
+  -ephemeral_app
+  -mediaprovider
+  -sdk_sandbox_all
+  -untrusted_app_all
+} self:netlink_route_socket nlmsg_read;
+
 ###
 ### Domain with network access
 ###
@@ -31,7 +39,7 @@ allow netdomain self:{ icmp_socket udp_socket rawip_socket } create_socket_perms
 # Connect to ports.
 allow netdomain port_type:tcp_socket name_connect;
 # See changes to the routing table.
-allow netdomain self:netlink_route_socket { create read getattr write setattr lock append connect getopt setopt shutdown nlmsg_read nlmsg };
+allow netdomain self:netlink_route_socket { create read getattr write setattr lock append connect getopt setopt shutdown nlmsg };
 allowxperm netdomain self:netlink_route_socket nlmsg unpriv_route_socket_nlmsgs;
 
 # Talks to netd via dnsproxyd socket.
