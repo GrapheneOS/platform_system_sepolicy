@@ -234,9 +234,11 @@
 /dev/socket/wpa_wlan0                                             wpa_socket
 /dev/socket/wpa_wlan9                                             wpa_socket
 /dev/socket/zygote                                                zygote_socket
+/dev/socket/zygote_compat                                         zygote_socket
 /dev/socket/zygote_secondary                                      zygote_socket
 /dev/socket/zygote_next                                           zygote_next_socket
 /dev/socket/usap_pool_primary                                     zygote_socket
+/dev/socket/usap_pool_compat                                      zygote_socket
 /dev/socket/usap_pool_secondary                                   zygote_socket
 /dev/spdif_out                                                    audio_device
 /dev/spdif_out-test                                               audio_device
