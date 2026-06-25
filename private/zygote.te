@@ -19,6 +19,7 @@ allow zygote system_server:process dyntransition;
 allow zygote appdomain:process dyntransition;
 allow zygote webview_zygote:process dyntransition;
 allow zygote app_zygote:process dyntransition;
+allow zygote zygote_next:process dyntransition;
 
 # Allow zygote to read app /proc/pid dirs (b/10455872).
 allow zygote appdomain:dir { getattr search };
@@ -31,6 +32,7 @@ allow zygote system_server:process { getpgid setpgid };
 allow zygote appdomain:process { getpgid setpgid };
 allow zygote webview_zygote:process { getpgid setpgid };
 allow zygote app_zygote:process { getpgid setpgid };
+allow zygote zygote_next:process { getpgid setpgid };
 
 # Read system data.
 allow zygote system_data_file:dir r_dir_perms;
@@ -179,6 +181,8 @@ allow zygote { sdcard_type fuse }:file { create_file_perms };
 # Handle --invoke-with command when launching Zygote with a wrapper command.
 allow zygote zygote_exec:file rx_file_perms;
 
+allow zygote zygote_next_exec:file rx_file_perms;
+
 # Allow zygote to write to statsd.
 unix_socket_send(zygote, statsdw, statsd)
 
@@ -290,6 +294,7 @@ neverallow zygote ~{
   system_server
   webview_zygote
   app_zygote
+  zygote_next
 }:process dyntransition;
 
 # Zygote should never execute anything from /data except for
