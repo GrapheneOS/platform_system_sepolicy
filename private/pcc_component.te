@@ -47,7 +47,6 @@ allow pcc_component mediaextractor_service:service_manager find;
 allow pcc_component mediametrics_service:service_manager find;
 allow pcc_component mediadrmserver_service:service_manager find;
 allow pcc_component drmserver_service:service_manager find;
-allow pcc_component media_drm_id_access_service:service_manager find;
 allow pcc_component radio_service:service_manager find;
 
 allow pcc_component {

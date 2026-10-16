@@ -14,7 +14,6 @@ allow isolated_app_all { app_data_file privapp_data_file sdk_sandbox_data_file}:
 allow isolated_app_all activity_service:service_manager find;
 allow isolated_app_all activity_structured_service:service_manager find;
 allow isolated_app_all display_service:service_manager find;
-allow isolated_app_all media_drm_id_access_service:service_manager find;
 
 # Google Breakpad (crash reporter for Chrome) relies on ptrace
 # functionality. Without the ability to ptrace, the crash reporter
@@ -83,7 +82,6 @@ neverallow { isolated_app_all -isolated_compute_app } {
     -activity_service
     -activity_structured_service
     -display_service
-    -media_drm_id_access_service
     -webviewupdate_service
 }:service_manager find;
 

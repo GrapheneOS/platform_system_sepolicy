@@ -28,9 +28,6 @@ allow sdk_sandbox_all sdk_sandbox_system_data_file:dir { getattr search };
 allow sdk_sandbox_all sdk_sandbox_data_file:dir create_dir_perms;
 allow sdk_sandbox_all sdk_sandbox_data_file:file create_file_perms;
 
-# Report denied MediaDrm device identifier requests with the owning app attribution.
-allow sdk_sandbox_all media_drm_id_access_service:service_manager find;
-
 # allow apps to pass open fds to the sdk sandbox
 allow sdk_sandbox_all { app_data_file privapp_data_file }:file { getattr read };
 
