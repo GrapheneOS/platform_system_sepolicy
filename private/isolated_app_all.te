@@ -76,7 +76,8 @@ neverallow isolated_app_all vndbinder_device:chr_file *;
 neverallow { isolated_app_all -isolated_compute_app } *:service_manager ~find;
 
 # b/17487348
-# Isolated apps can only access the services listed here.
+# Isolated apps can only access four services,
+# activity_service, activity_structured_service, display_service, webviewupdate_service.
 neverallow { isolated_app_all -isolated_compute_app } {
     service_manager_type
     -activity_service
