@@ -22,6 +22,7 @@ type incidentcompanion_service,      app_api_service, system_api_service, system
 type logcat_service,                 system_server_service, service_manager_type;
 type logd_service,                   service_manager_type;
 type mediacodeclist_generator_service,  service_manager_type;
+type media_drm_id_access_service,       system_server_service, service_manager_type;
 type mediatuner_service,             app_api_service, service_manager_type;
 type mmd_service,                    service_manager_type;
 type on_device_intelligence_service, app_api_service, system_server_service, service_manager_type, isolated_compute_allowed_service;

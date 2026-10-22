@@ -396,6 +396,7 @@ var (
 		"media.drm":                              EXCEPTION_NO_FUZZER,
 		"media.tuner":                            EXCEPTION_NO_FUZZER,
 		"media_communication":                    EXCEPTION_NO_FUZZER,
+		"media_drm_id_access":                    EXCEPTION_NO_FUZZER,
 		"media_metrics":                          EXCEPTION_NO_FUZZER,
 		"media_projection":                       EXCEPTION_NO_FUZZER,
 		"media_quality":                          EXCEPTION_NO_FUZZER,

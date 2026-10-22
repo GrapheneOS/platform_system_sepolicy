@@ -6,6 +6,10 @@ binder_call(hal_drm_server, hal_drm_client)
 hal_attribute_hwservice(hal_drm, hal_drm_hwservice)
 hal_attribute_service(hal_drm, hal_drm_service)
 
+# Query system_server before returning the persistent MediaDrm device identifier.
+allow hal_drm_server media_drm_id_access_service:service_manager find;
+binder_call(hal_drm_server, system_server)
+
 allow hal_drm hidl_memory_hwservice:hwservice_manager find;
 
 # Required by Widevine DRM (b/22990512)
